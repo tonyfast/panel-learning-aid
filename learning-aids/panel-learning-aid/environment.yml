@@ -1,0 +1,19 @@
+name: panel
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python
+  - pandas
+  - panel
+  - holoviews
+  - hvplot
+  - jupyterlab
+  - pytest
+  - pip
+# for dev
+  # - pre-commit
+# pip
+  - pip:
+      - mortgage
+# install pyviz jupyterlab extension afterwards as well
