@@ -9,6 +9,7 @@ dependencies:
   - holoviews
   - hvplot
   - jupyterlab
+  - nbgitpuller
   - pytest
   - pip
 # for dev
