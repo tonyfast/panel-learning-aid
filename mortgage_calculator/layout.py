@@ -142,10 +142,10 @@ def update(event):
     # update down_payment_value_widget_max when home value changes
     if event.obj is home_value_widget:
         if down_payment_type == 'Dollars':
-            down_payment_dollars_value_widget.end = home_value * 0.99
+            down_payment_dollars_value_widget.end = int(home_value * 0.99)
             logger.debug(f'down_payment_value_widget.end = {home_value * 0.99}')
         if prop_tax_type == 'Dollars':
-            prop_tax_dollars_amount_widget.end = home_value * 0.03
+            prop_tax_dollars_amount_widget.end = int(home_value * 0.03)
             logger.debug(f'prop_tax_dollars_amount_widget.end = {home_value * 0.03}')
 
     if event.obj is prop_tax_type_widget:

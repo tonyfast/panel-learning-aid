@@ -16,7 +16,7 @@ down_payment_dollars_value_widget = pn.widgets.Spinner(
     value=30_000,
     start=0,
     step=1000,
-    end=initial_home_cost * 0.99,
+    end=int(initial_home_cost * 0.99),
 )
 down_payment_percentage_value_widget = pn.widgets.Spinner(
     name="Down Payment: (%)",
@@ -37,7 +37,7 @@ prop_tax_type_widget = pn.widgets.RadioButtonGroup(
     name="prop_tax_type", options=["Dollars", "Percentage"], value="Percentage"
 )
 prop_tax_dollars_amount_widget = pn.widgets.Spinner(
-    name="Annual Property Tax: ($)", start=100, end=round(0.03 * initial_home_cost, 0), step=100
+    name="Annual Property Tax: ($)", start=100, end=int(round(0.03 * initial_home_cost, 0)), step=100
 )
 prop_tax_percentage_amount_widget = pn.widgets.Spinner(
     name="Annual Property Tax: (%)", value=1.0, start=0.01, end=3.0, step=0.01
