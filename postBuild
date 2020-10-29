@@ -1,2 +1,0 @@
-jupyter labextension install @pyviz/jupyterlab_pyviz --minimize=False
-jupyter lab build --dev-build=False --minimize=False
