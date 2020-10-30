@@ -4,7 +4,7 @@ This repo contains a learning-aid notebook designed to get you up and running qu
 
 ## Running on Binder
 
-The fastest way to access the learning aid notebook is by clicking the following link: https://mybinder.org/v2/gh/Quansight/panel-learning-aid/master?filepath=learning_aid.ipynb which will launch the jupyterlab notebook in your browser.
+The fastest way to access the learning aid notebook is by clicking the following link: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Quansight/panel-learning-aid/master?filepath=learning_aid.ipynb) which will launch the jupyterlab notebook in your browser.
 
 ## Running Locally
 
