@@ -10,8 +10,9 @@ dependencies:
   - hvplot
   - jupyterlab
   - pytest
+  - appmode
   - pip
 # pip
   - pip:
       - mortgage
-# install pyviz jupyterlab extension afterwards as well
+# install @pyviz/jupyterlab_pyviz jupyter labextension afterwards as well if using jupyterlab
