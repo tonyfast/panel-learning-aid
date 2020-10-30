@@ -1,20 +1,14 @@
-# Mortgage Calculator
-This repo contains the code to run a mortgage calculator app using Panel.
-To see a running version of this app, please visit (binder url here eventually).
+# Panel Learning Aid
 
-## Install environment
-You need conda installed to run this app.  Create the `panel` environment by running the following:
-`conda env create -f environment.yml`
+This repo contains a learning-aid notebook designed to get you up and running quickly with panel. 
 
-## Deploy App Locally
-After having installed the environment, activate it with:
-- `conda activate panel`  
+## Running on Binder
 
-Then start the app by running on the command line:
-- `python -m mortgage_calculator`  
+The fastest way to access the learning aid notebook is by clicking the following link: https://mybinder.org/v2/gh/Quansight/panel-learning-aid/master?filepath=learning_aid.ipynb which will launch the jupyterlab notebook in your browser.
 
-You can see the app by navigating to the url which will appear on the command line in a browser (IE 11 not supported).
+## Running Locally
 
-## Run tests
-To run the repo tests, run the following in the command line when in the repo root folder.  
-- `pytest`
+If you'd like to run this locally, clone the repository and follow the following steps:
+- install the conda environment with `conda env create -f environment.yml`
+- activate the environment with `conda activate panel`
+- run the `learning_aid.ipynb` notebook with `jupyter notebook learning_aid.iypnb`
