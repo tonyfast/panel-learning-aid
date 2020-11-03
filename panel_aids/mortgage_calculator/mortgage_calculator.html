@@ -1,0 +1,932 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&lt;no title&gt; &#8212; Panel learning aids</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Mortgage Calculator" href="readme.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Panel learning aids</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../readme.html">
+   Panel Learning Aid
+  </a>
+ </li>
+</ul>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   Panel/Holoviews Learning Aid
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/panel_aids/mortgage_calculator/mortgage_calculator.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/panel_aids/mortgage_calculator/mortgage_calculator.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="simple nav section-nav flex-column">
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Configuration Settings for Mortgage App&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+
+<span class="c1"># Constants</span>
+<span class="n">DOWN_PMT_PMI_THRESHOLD_PCT</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">MNTHS_PER_YR</span> <span class="o">=</span> <span class="mi">12</span>
+
+<span class="c1"># Configuration</span>
+<span class="n">initial_home_cost</span> <span class="o">=</span> <span class="mi">300_000</span>
+<span class="n">start_date</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+
+<span class="kn">import</span> <span class="nn">panel</span> <span class="k">as</span> <span class="nn">pn</span>
+
+<span class="c1"># define widgets</span>
+<span class="n">home_value_widget</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">Spinner</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Home Value ($):&quot;</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mi">100_000_000</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1000</span>
+<span class="p">)</span>
+<span class="n">down_payment_type_widget</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">RadioButtonGroup</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;down_payment_type&quot;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Dollars&quot;</span><span class="p">,</span> <span class="s2">&quot;Percentage&quot;</span><span class="p">],</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;Dollars&quot;</span>
+<span class="p">)</span>
+<span class="n">down_payment_dollars_value_widget</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">Spinner</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Down Payment: ($)&quot;</span><span class="p">,</span>
+    <span class="n">value</span><span class="o">=</span><span class="mi">30_000</span><span class="p">,</span>
+    <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">step</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+    <span class="n">end</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">initial_home_cost</span> <span class="o">*</span> <span class="mf">0.99</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="n">down_payment_percentage_value_widget</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">Spinner</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Down Payment: (%)&quot;</span><span class="p">,</span>
+    <span class="n">value</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span>
+    <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">step</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+    <span class="n">end</span><span class="o">=</span><span class="mi">99</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">loan_amount_pane</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">pane</span><span class="o">.</span><span class="n">Markdown</span><span class="p">(</span><span class="nb">object</span><span class="o">=</span><span class="s2">&quot;Loan Amount ($):&quot;</span><span class="p">)</span>
+<span class="n">annual_int_rate_widget</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">Spinner</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Annual Interest Rate (%):&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">0.01</span>
+<span class="p">)</span>
+<span class="n">loan_term_widget</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">RadioButtonGroup</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Loan Term Radio&quot;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;15&quot;</span><span class="p">,</span> <span class="s2">&quot;20&quot;</span><span class="p">,</span> <span class="s2">&quot;30&quot;</span><span class="p">],</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;30&quot;</span>
+<span class="p">)</span>
+<span class="n">prop_tax_type_widget</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">RadioButtonGroup</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;prop_tax_type&quot;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Dollars&quot;</span><span class="p">,</span> <span class="s2">&quot;Percentage&quot;</span><span class="p">],</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;Percentage&quot;</span>
+<span class="p">)</span>
+<span class="n">prop_tax_dollars_amount_widget</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">Spinner</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Annual Property Tax: ($)&quot;</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="mf">0.03</span> <span class="o">*</span> <span class="n">initial_home_cost</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span> <span class="n">step</span><span class="o">=</span><span class="mi">100</span>
+<span class="p">)</span>
+<span class="n">prop_tax_percentage_amount_widget</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">Spinner</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Annual Property Tax: (%)&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">0.01</span>
+<span class="p">)</span>
+<span class="n">pmi_percent_widget</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">Spinner</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Annual Private Mortgage Insurance (</span><span class="si">% o</span><span class="s2">f loan amount):&quot;</span><span class="p">,</span>
+    <span class="n">value</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">end</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">step</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">monthly_home_ins_prem_widget</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">Spinner</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Monthly Home Owner&#39;s Insurance Premium ($):&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">190</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">10</span>
+<span class="p">)</span>
+<span class="n">monthly_hoa_fees_widget</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">Spinner</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Monthly HOA Fees ($):&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">5</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mortgage</span> <span class="kn">import</span> <span class="n">Loan</span>
+
+
+<span class="k">def</span> <span class="nf">loan_amortization_schedule</span><span class="p">(</span>
+    <span class="n">home_cost</span><span class="p">,</span> <span class="n">interest_rate_pct</span><span class="p">,</span> <span class="n">mort_len_yr</span><span class="p">,</span> <span class="n">down_payment_type</span><span class="p">,</span> <span class="n">down_payment_value</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Calculates the amortization schedule given the home cost, interest rate, amortization length, and down payment info.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    home_cost : float or int</span>
+<span class="sd">    interest_rate_pct : float or int</span>
+<span class="sd">        Annual interest rate in dollars</span>
+<span class="sd">    mort_len_yr : int</span>
+<span class="sd">        Length of time over which the loan is repaid</span>
+<span class="sd">    down_payment_type : str</span>
+<span class="sd">        Units of the down_payment_value parameter (&quot;Dollars&quot; or &quot;Percentage&quot;)</span>
+<span class="sd">    down_payment_value : float or int</span>
+<span class="sd">        Value of the down payment on the home in the units given by down_payment_type</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    down_payment_dollars:</span>
+<span class="sd">        down_payment amount in dollars</span>
+<span class="sd">    principal:</span>
+<span class="sd">        initial loan balance</span>
+<span class="sd">    loan: mortgage.Loan</span>
+<span class="sd">        contains the complete loan repayment information</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; print(loan_amortization_schedule(300_000, 3, 30, &#39;Dollars&#39;, 30_000))</span>
+<span class="sd">    (30000, 270000, &lt;Loan principal=270000, interest=0.03, term=30&gt;)</span>
+
+<span class="sd">    &gt;&gt;&gt; print(loan_amortization_schedule(300_000, 3, 30, &#39;Percentage&#39;, 10.0))</span>
+<span class="sd">    (30000.0, 270000.0, &lt;Loan principal=270000, interest=0.03, term=30&gt;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">down_payment_type</span> <span class="o">==</span> <span class="s2">&quot;Dollars&quot;</span><span class="p">:</span>
+        <span class="n">down_payment_dollars</span> <span class="o">=</span> <span class="n">down_payment_value</span>
+    <span class="k">elif</span> <span class="n">down_payment_type</span> <span class="o">==</span> <span class="s2">&quot;Percentage&quot;</span><span class="p">:</span>
+        <span class="n">down_payment_dollars</span> <span class="o">=</span> <span class="n">down_payment_value</span> <span class="o">/</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">home_cost</span>
+
+    <span class="n">principal</span> <span class="o">=</span> <span class="n">home_cost</span> <span class="o">-</span> <span class="n">down_payment_dollars</span>
+    <span class="n">loan</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="s1">&#39;mortgage&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">Loan</span><span class="p">(</span>
+        <span class="n">principal</span><span class="p">,</span> <span class="n">interest_rate_pct</span> <span class="o">/</span> <span class="mi">100</span><span class="p">,</span> <span class="n">mort_len_yr</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">down_payment_dollars</span><span class="p">,</span> <span class="n">principal</span><span class="p">,</span> <span class="n">loan</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Plots for mortgage calculator app&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">inspect</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span><span class="p">,</span> <span class="n">timedelta</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span><span class="p">,</span> <span class="n">wraps</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span><span class="p">,</span> <span class="n">cast</span>
+
+<span class="kn">import</span> <span class="nn">holoviews</span> <span class="k">as</span> <span class="nn">hv</span>
+<span class="kn">import</span> <span class="nn">hvplot.pandas</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">panel</span> <span class="k">as</span> <span class="nn">pn</span>
+<span class="kn">from</span> <span class="nn">bokeh.models</span> <span class="kn">import</span> <span class="n">HoverTool</span>
+<span class="kn">from</span> <span class="nn">bokeh.models.formatters</span> <span class="kn">import</span> <span class="n">NumeralTickFormatter</span>
+<span class="kn">from</span> <span class="nn">mortgage</span> <span class="kn">import</span> <span class="n">Loan</span>
+
+
+
+<span class="k">def</span> <span class="nf">monthly_payment_breakdown_plot</span><span class="p">(</span>
+    <span class="n">home_cost</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span>
+    <span class="n">interest_rate_pct</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span>
+    <span class="n">mort_len_yr</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">down_payment_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">down_payment_value</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span>
+    <span class="n">prop_tax_amt</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span>
+    <span class="n">prop_tax_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">home_ins</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span>
+    <span class="n">hoa_fees</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span>
+    <span class="n">pmi_percent</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Produce a bar plot of the initial monthly payment breakdown for a mortgage</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    home_cost : Union[float, int]</span>
+<span class="sd">        home cost in dollars</span>
+<span class="sd">    interest_rate_pct : Union[float, int]</span>
+<span class="sd">        Annual interest rate percentage (e.g. 3.1)</span>
+<span class="sd">    mort_len_yr : int</span>
+<span class="sd">        Length of mortgage in years</span>
+<span class="sd">    down_payment_type : str</span>
+<span class="sd">        &quot;Dollars&quot; or &quot;Percentage&quot;</span>
+<span class="sd">    down_payment_value : Union[float, int]</span>
+<span class="sd">        Value of down payment on home</span>
+<span class="sd">    prop_tax_type : str</span>
+<span class="sd">        &quot;Dollars&quot; or &quot;Percentage&quot;</span>
+<span class="sd">    prop_tax_amt : Union[float, int]</span>
+<span class="sd">        amount of property tax</span>
+<span class="sd">    home_ins : Union[float, int]</span>
+<span class="sd">        Monthly home insurance premium in dollars</span>
+<span class="sd">    hoa_fees : Union[float, int]</span>
+<span class="sd">        Monthly HOA Fees in dollars</span>
+<span class="sd">    pmi_percent : Union[float, int]</span>
+<span class="sd">        Private Mortgage Insurance Percentage (e.g. 0.5)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    out: holoviews.element.chart.Bars</span>
+<span class="sd">        initial mortgage payment breakdown bar chart</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">down_payment_dollars</span><span class="p">,</span> <span class="n">principal</span><span class="p">,</span> <span class="n">loan</span> <span class="o">=</span> <span class="n">loan_amortization_schedule</span><span class="p">(</span>
+        <span class="n">home_cost</span><span class="p">,</span> <span class="n">interest_rate_pct</span><span class="p">,</span> <span class="n">mort_len_yr</span><span class="p">,</span> <span class="n">down_payment_type</span><span class="p">,</span> <span class="n">down_payment_value</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="n">loan</span><span class="p">:</span>
+        <span class="n">princ_and_int</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">loan</span><span class="o">.</span><span class="n">monthly_payment</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">princ_and_int</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">if</span> <span class="n">prop_tax_type</span> <span class="o">==</span> <span class="s2">&quot;Dollars&quot;</span><span class="p">:</span>
+        <span class="n">prop_tax_dollars</span> <span class="o">=</span> <span class="n">prop_tax_amt</span> <span class="o">/</span> <span class="n">MNTHS_PER_YR</span>
+    <span class="k">elif</span> <span class="n">prop_tax_type</span> <span class="o">==</span> <span class="s2">&quot;Percentage&quot;</span><span class="p">:</span>
+        <span class="n">prop_tax_dollars</span> <span class="o">=</span> <span class="n">prop_tax_amt</span> <span class="o">/</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">home_cost</span> <span class="o">/</span> <span class="n">MNTHS_PER_YR</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;prop_tax_type: </span><span class="si">{</span><span class="n">prop_tax_type</span><span class="si">}</span><span class="s2"> should be in </span><span class="si">{</span><span class="s1">&#39;Dollars&#39;</span><span class="p">,</span> <span class="s1">&#39;Percentage&#39;</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">down_payment_dollars</span> <span class="o">/</span> <span class="n">home_cost</span> <span class="o">&lt;</span> <span class="n">DOWN_PMT_PMI_THRESHOLD_PCT</span> <span class="o">/</span> <span class="mi">100</span><span class="p">:</span>
+        <span class="n">monthly_pmi</span> <span class="o">=</span> <span class="n">principal</span> <span class="o">*</span> <span class="n">pmi_percent</span> <span class="o">/</span> <span class="mi">100</span> <span class="o">/</span> <span class="n">MNTHS_PER_YR</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">monthly_pmi</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="n">costs</span> <span class="o">=</span> <span class="p">[</span><span class="n">princ_and_int</span><span class="p">,</span> <span class="n">prop_tax_dollars</span><span class="p">,</span> <span class="n">home_ins</span><span class="p">,</span> <span class="n">hoa_fees</span><span class="p">]</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Principal &amp; Interest&quot;</span><span class="p">,</span> <span class="s2">&quot;Property Tax&quot;</span><span class="p">,</span> <span class="s2">&quot;Home Insurance&quot;</span><span class="p">,</span> <span class="s2">&quot;HOA Fees&quot;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">monthly_pmi</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">costs</span> <span class="o">+=</span> <span class="p">[</span><span class="n">monthly_pmi</span><span class="p">]</span>
+        <span class="n">index</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">&quot;PMI&quot;</span><span class="p">]</span>
+    <span class="n">total_cost</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">costs</span><span class="p">)</span>
+
+    <span class="n">hover</span> <span class="o">=</span> <span class="n">HoverTool</span><span class="p">(</span>
+        <span class="n">tooltips</span><span class="o">=</span><span class="p">[(</span><span class="s2">&quot;Payment&quot;</span><span class="p">,</span> <span class="s2">&quot;@index</span><span class="si">{safe}</span><span class="s2">&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Amount&quot;</span><span class="p">,</span> <span class="s2">&quot;@</span><span class="si">{Amount}</span><span class="s2">{$0,0}&quot;</span><span class="p">)]</span>
+    <span class="p">)</span>
+
+    <span class="n">plot</span> <span class="o">=</span> <span class="n">hv</span><span class="o">.</span><span class="n">Bars</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">costs</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Amount&quot;</span><span class="p">]))</span><span class="o">.</span><span class="n">opts</span><span class="p">(</span>
+        <span class="n">yformatter</span><span class="o">=</span><span class="n">NumeralTickFormatter</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">&quot;$0,0&quot;</span><span class="p">),</span>
+        <span class="n">tools</span><span class="o">=</span><span class="p">[</span><span class="n">hover</span><span class="p">],</span>
+        <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Initial Monthly Payment: $</span><span class="si">{</span><span class="n">total_cost</span><span class="si">:</span><span class="s2">,.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;Payment Type&quot;</span><span class="p">,</span>
+        <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;Monthly Payment Amount&quot;</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#2e8cc7&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">plot</span>
+
+
+<span class="k">def</span> <span class="nf">mortgage_amortization_plot</span><span class="p">(</span>
+    <span class="n">home_cost</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+    <span class="n">interest_rate_pct</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+    <span class="n">mort_len_yr</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">down_payment_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">down_payment_value</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+    <span class="n">prop_tax_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">prop_tax_amt</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+    <span class="n">home_ins</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+    <span class="n">hoa_fees</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+    <span class="n">pmi_percent</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+    <span class="n">start_date</span><span class="p">:</span> <span class="n">date</span><span class="o">=</span><span class="n">start_date</span><span class="p">,</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Plots the amortization schedule costs over time</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    home_cost : Union[float, int]</span>
+<span class="sd">        home cost in dollars</span>
+<span class="sd">    interest_rate_pct : Union[float, int]</span>
+<span class="sd">        Annual interest rate percentage (e.g. 3.1)</span>
+<span class="sd">    mort_len_yr : int</span>
+<span class="sd">        Length of mortgage in years</span>
+<span class="sd">    down_payment_type : str</span>
+<span class="sd">        &quot;Dollars&quot; or &quot;Percentage&quot;</span>
+<span class="sd">    down_payment_value : Union[float, int]</span>
+<span class="sd">        Value of down payment on home</span>
+<span class="sd">    prop_tax_type : str</span>
+<span class="sd">        &quot;Dollars&quot; or &quot;Percentage&quot;</span>
+<span class="sd">    prop_tax_amt : Union[float, int]</span>
+<span class="sd">        amount of property tax</span>
+<span class="sd">    home_ins : Union[float, int]</span>
+<span class="sd">        Monthly home insurance premium in dollars</span>
+<span class="sd">    hoa_fees : Union[float, int]</span>
+<span class="sd">        Monthly HOA Fees in dollars</span>
+<span class="sd">    pmi_percent : Union[float, int]</span>
+<span class="sd">        Private Mortgage Insurance Percentage (e.g. 0.5)</span>
+<span class="sd">    start_date : datetime.date, optional</span>
+<span class="sd">        date at which to start the amortization, by default date.today()</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    out: holoviews.element.chart.Bars</span>
+<span class="sd">        mortgage amortization bar chart</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">down_payment_dollars</span><span class="p">,</span> <span class="n">principal</span><span class="p">,</span> <span class="n">loan</span> <span class="o">=</span> <span class="n">loan_amortization_schedule</span><span class="p">(</span>
+        <span class="n">home_cost</span><span class="p">,</span> <span class="n">interest_rate_pct</span><span class="p">,</span> <span class="n">mort_len_yr</span><span class="p">,</span> <span class="n">down_payment_type</span><span class="p">,</span> <span class="n">down_payment_value</span>
+    <span class="p">)</span>
+    <span class="n">monthly_pmi</span> <span class="o">=</span> <span class="n">principal</span> <span class="o">*</span> <span class="n">pmi_percent</span> <span class="o">/</span> <span class="mi">100</span> <span class="o">/</span> <span class="n">MNTHS_PER_YR</span>
+
+    <span class="k">if</span> <span class="n">prop_tax_type</span> <span class="o">==</span> <span class="s2">&quot;Dollars&quot;</span><span class="p">:</span>
+        <span class="n">prop_tax_dollars</span> <span class="o">=</span> <span class="n">prop_tax_amt</span> <span class="o">/</span> <span class="n">MNTHS_PER_YR</span>
+    <span class="k">elif</span> <span class="n">prop_tax_type</span> <span class="o">==</span> <span class="s2">&quot;Percentage&quot;</span><span class="p">:</span>
+        <span class="n">prop_tax_dollars</span> <span class="o">=</span> <span class="n">prop_tax_amt</span> <span class="o">/</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">home_cost</span> <span class="o">/</span> <span class="n">MNTHS_PER_YR</span>
+
+    <span class="n">loan_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">loan</span><span class="o">.</span><span class="n">schedule</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">)</span>
+    <span class="n">loan_df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">period_range</span><span class="p">(</span>
+        <span class="n">start_date</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="n">mort_len_yr</span> <span class="o">*</span> <span class="n">MNTHS_PER_YR</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">&quot;M&quot;</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">to_timestamp</span><span class="p">()</span>
+    <span class="n">loan_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;Principal Paid&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">loan_df</span><span class="o">.</span><span class="n">principal</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
+    <span class="n">loan_df</span> <span class="o">=</span> <span class="n">loan_df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+        <span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;total_interest&quot;</span><span class="p">:</span> <span class="s2">&quot;Interest Paid&quot;</span><span class="p">,</span> <span class="s2">&quot;balance&quot;</span><span class="p">:</span> <span class="s2">&quot;Principal Remaining&quot;</span><span class="p">}</span>
+    <span class="p">)</span>
+
+    <span class="n">all_indices_but_first</span> <span class="o">=</span> <span class="n">loan_df</span><span class="o">.</span><span class="n">number</span> <span class="o">&gt;=</span> <span class="mi">1</span>
+    <span class="c1"># set PMI payment while equity is less than DOWN_PMT_PMI_THRESHOLD_PCT</span>
+    <span class="n">loan_df</span><span class="p">[</span><span class="s2">&quot;PMI&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">loan_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+        <span class="p">(</span><span class="n">loan_df</span><span class="p">[</span><span class="s2">&quot;Principal Paid&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">home_cost</span> <span class="o">*</span> <span class="n">DOWN_PMT_PMI_THRESHOLD_PCT</span> <span class="o">/</span> <span class="mi">100</span><span class="p">)</span>
+        <span class="o">&amp;</span> <span class="p">(</span><span class="n">all_indices_but_first</span><span class="p">),</span>
+        <span class="s2">&quot;PMI&quot;</span><span class="p">,</span>
+    <span class="p">]</span> <span class="o">=</span> <span class="n">monthly_pmi</span>
+
+    <span class="n">loan_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">all_indices_but_first</span><span class="p">,</span> <span class="s2">&quot;Property Tax&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">prop_tax_dollars</span>   
+    <span class="n">loan_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">all_indices_but_first</span><span class="p">,</span> <span class="s2">&quot;Home Insurance&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">home_ins</span>
+    <span class="n">loan_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">all_indices_but_first</span><span class="p">,</span> <span class="s2">&quot;HOA Fees&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">hoa_fees</span>
+    <span class="n">loan_df</span> <span class="o">=</span> <span class="n">loan_df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;principal&quot;</span><span class="p">:</span> <span class="s2">&quot;Principal&quot;</span><span class="p">,</span> <span class="s2">&quot;interest&quot;</span><span class="p">:</span> <span class="s2">&quot;Interest&quot;</span><span class="p">})</span>
+    <span class="n">loan_df</span><span class="p">[</span><span class="s2">&quot;Taxes &amp; Fees&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">loan_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+        <span class="p">:,</span> <span class="p">[</span><span class="s2">&quot;PMI&quot;</span><span class="p">,</span> <span class="s2">&quot;Property Tax&quot;</span><span class="p">,</span> <span class="s2">&quot;Home Insurance&quot;</span><span class="p">,</span> <span class="s2">&quot;HOA Fees&quot;</span><span class="p">]</span>
+    <span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">yearly_grouped</span> <span class="o">=</span> <span class="n">loan_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">loan_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;number&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">bar_graph_df</span> <span class="o">=</span> <span class="n">yearly_grouped</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span>
+        <span class="n">value_vars</span><span class="o">=</span><span class="p">[</span>
+            <span class="s2">&quot;Principal&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Interest&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Property Tax&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Home Insurance&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;HOA Fees&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;PMI&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="n">var_name</span><span class="o">=</span><span class="s2">&quot;payment_type&quot;</span><span class="p">,</span>
+        <span class="n">value_name</span><span class="o">=</span><span class="s2">&quot;payment_value&quot;</span><span class="p">,</span>
+        <span class="n">ignore_index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">hover</span> <span class="o">=</span> <span class="n">HoverTool</span><span class="p">(</span>
+        <span class="n">tooltips</span><span class="o">=</span><span class="p">[</span>
+            <span class="p">(</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="s2">&quot;@index&quot;</span><span class="p">),</span>
+            <span class="p">(</span><span class="s2">&quot;Payment&quot;</span><span class="p">,</span> <span class="s2">&quot;@payment_type</span><span class="si">{safe}</span><span class="s2">&quot;</span><span class="p">),</span>
+            <span class="p">(</span><span class="s2">&quot;Amount&quot;</span><span class="p">,</span> <span class="s2">&quot;@payment_value{$0,0}&quot;</span><span class="p">),</span>
+        <span class="p">]</span>
+    <span class="p">)</span>
+
+    <span class="n">bar_plot</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">hv</span><span class="o">.</span><span class="n">Bars</span><span class="p">(</span><span class="n">bar_graph_df</span><span class="p">,</span> <span class="n">kdims</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;index&quot;</span><span class="p">,</span> <span class="s2">&quot;payment_type&quot;</span><span class="p">],</span> <span class="n">vdims</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;payment_value&quot;</span><span class="p">])</span>
+        <span class="o">.</span><span class="n">opts</span><span class="p">(</span>
+            <span class="n">yformatter</span><span class="o">=</span><span class="n">NumeralTickFormatter</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">&quot;$0,0&quot;</span><span class="p">),</span>
+            <span class="n">stacked</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="c1"># width=1000,</span>
+            <span class="n">tools</span><span class="o">=</span><span class="p">[</span><span class="n">hover</span><span class="p">],</span>
+            <span class="n">legend_position</span><span class="o">=</span><span class="s2">&quot;bottom_right&quot;</span><span class="p">,</span>
+            <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span>
+            <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;Annual Payment&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="o">.</span><span class="n">opts</span><span class="p">(</span><span class="n">shared_axes</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">xrotation</span><span class="o">=</span><span class="mi">70</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">bar_plot</span>
+
+
+<span class="k">def</span> <span class="nf">principal_vs_time_plot</span><span class="p">(</span>
+    <span class="n">home_cost</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span>
+    <span class="n">interest_rate_pct</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span>
+    <span class="n">mort_len_yr</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">down_payment_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">down_payment_value</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span>
+    <span class="n">start_date</span><span class="p">:</span> <span class="n">date</span><span class="o">=</span><span class="n">start_date</span><span class="p">,</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Plot of principal paid, still owed, and interest paid over time</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    home_cost : Union[float, int]</span>
+<span class="sd">        home cost in dollars</span>
+<span class="sd">    interest_rate_pct : Union[float, int]</span>
+<span class="sd">        Annual interest rate percentage (e.g. 3.1)</span>
+<span class="sd">    mort_len_yr : int</span>
+<span class="sd">        Length of mortgage in years</span>
+<span class="sd">    down_payment_type : str</span>
+<span class="sd">        &quot;Dollars&quot; or &quot;Percentage&quot;</span>
+<span class="sd">    down_payment_value : Union[float, int]</span>
+<span class="sd">        Value of down payment on home</span>
+<span class="sd">    start_date : date, optional</span>
+<span class="sd">        [description], by default start_date</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    out: holoviews.element.chart.Curve</span>
+<span class="sd">        Principal over time plot</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">down_payment_dollars</span><span class="p">,</span> <span class="n">principal</span><span class="p">,</span> <span class="n">loan</span> <span class="o">=</span> <span class="n">loan_amortization_schedule</span><span class="p">(</span>
+        <span class="n">home_cost</span><span class="p">,</span> <span class="n">interest_rate_pct</span><span class="p">,</span> <span class="n">mort_len_yr</span><span class="p">,</span> <span class="n">down_payment_type</span><span class="p">,</span> <span class="n">down_payment_value</span>
+    <span class="p">)</span>
+
+    <span class="n">loan_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">loan</span><span class="o">.</span><span class="n">schedule</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">)</span>
+    <span class="n">loan_df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">period_range</span><span class="p">(</span>
+        <span class="n">start_date</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="n">mort_len_yr</span> <span class="o">*</span> <span class="n">MNTHS_PER_YR</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">&quot;M&quot;</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">to_timestamp</span><span class="p">()</span>
+    <span class="n">loan_df</span><span class="p">[</span><span class="s2">&quot;Principal Paid&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">loan_df</span><span class="o">.</span><span class="n">principal</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
+    <span class="n">loan_df</span> <span class="o">=</span> <span class="n">loan_df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+        <span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;total_interest&quot;</span><span class="p">:</span> <span class="s2">&quot;Interest Paid&quot;</span><span class="p">,</span> <span class="s2">&quot;balance&quot;</span><span class="p">:</span> <span class="s2">&quot;Principal Remaining&quot;</span><span class="p">}</span>
+    <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">curve_plot</span><span class="p">(</span><span class="n">label</span><span class="p">):</span>
+        <span class="n">hover</span> <span class="o">=</span> <span class="n">HoverTool</span><span class="p">(</span>
+            <span class="n">tooltips</span><span class="o">=</span><span class="p">[(</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="s2">&quot;@index{%b %Y}&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Value&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;@</span><span class="se">{{</span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="se">}}{{</span><span class="s2">$0,0</span><span class="se">}}</span><span class="s2">&quot;</span><span class="p">)],</span>
+            <span class="n">formatters</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;@index&quot;</span><span class="p">:</span> <span class="s2">&quot;datetime&quot;</span><span class="p">},</span>
+        <span class="p">)</span>
+        <span class="n">curve_opts</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;line_width&quot;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="s2">&quot;alpha&quot;</span><span class="p">:</span> <span class="mf">0.7</span><span class="p">,</span> <span class="s2">&quot;tools&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">hover</span><span class="p">]}</span>
+        <span class="k">return</span> <span class="n">hv</span><span class="o">.</span><span class="n">Curve</span><span class="p">(</span><span class="n">loan_df</span><span class="p">[</span><span class="n">label</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span><span class="o">.</span><span class="n">opts</span><span class="p">(</span><span class="o">**</span><span class="n">curve_opts</span><span class="p">)</span>
+
+    <span class="n">curves</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">curve_plot</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;Principal Paid&quot;</span><span class="p">,</span> <span class="s2">&quot;Principal Remaining&quot;</span><span class="p">,</span> <span class="s2">&quot;Interest Paid&quot;</span><span class="p">]</span>
+    <span class="p">]</span>
+    <span class="n">composite_plot</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="n">hv</span><span class="o">.</span><span class="n">Curve</span><span class="o">.</span><span class="fm">__mul__</span><span class="p">,</span> <span class="n">curves</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">composite_plot</span><span class="o">.</span><span class="n">opts</span><span class="p">(</span>
+        <span class="n">yformatter</span><span class="o">=</span><span class="n">NumeralTickFormatter</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">&quot;$0,0&quot;</span><span class="p">),</span>
+        <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">principal</span><span class="p">),</span>
+        <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span>
+        <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;Total Amount&quot;</span><span class="p">,</span>
+        <span class="n">legend_position</span><span class="o">=</span><span class="s2">&quot;bottom_left&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+
+<span class="k">def</span> <span class="nf">get_logger</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+
+    <span class="c1"># create console handler with a higher log level</span>
+    <span class="n">ch</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">()</span>
+    <span class="n">ch</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">WARNING</span><span class="p">)</span>
+
+    <span class="c1"># create formatter and add it to the handlers</span>
+    <span class="n">formatter</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span>
+        <span class="s2">&quot;[</span><span class="si">%(asctime)s</span><span class="s2">: </span><span class="si">%(levelname)s</span><span class="s2">/</span><span class="si">%(filename)s</span><span class="s2">: funcName </span><span class="si">%(funcName)s</span><span class="s2"> - line </span><span class="si">%(lineno)s</span><span class="s2">]: </span><span class="si">%(message)s</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="n">datefmt</span><span class="o">=</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">ch</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
+
+    <span class="c1"># add the handlers to the logger</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">logger</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+
+<span class="kn">import</span> <span class="nn">panel</span> <span class="k">as</span> <span class="nn">pn</span>
+
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="n">down_payment_value_widget</span> <span class="o">=</span> <span class="n">down_payment_dollars_value_widget</span>
+<span class="n">prop_tax_amount_widget</span> <span class="o">=</span> <span class="n">prop_tax_percentage_amount_widget</span>
+
+<span class="n">left_widget_box</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">WidgetBox</span><span class="p">(</span>
+    <span class="n">home_value_widget</span><span class="p">,</span>
+    <span class="s2">&quot;Down Payment:&quot;</span><span class="p">,</span>
+    <span class="n">down_payment_type_widget</span><span class="p">,</span>
+    <span class="n">down_payment_value_widget</span><span class="p">,</span>
+    <span class="n">loan_amount_pane</span><span class="p">,</span>
+    <span class="n">annual_int_rate_widget</span><span class="p">,</span>
+    <span class="s2">&quot;Loan Term&quot;</span><span class="p">,</span>
+    <span class="n">loan_term_widget</span><span class="p">,</span>
+    <span class="n">sizing_mode</span><span class="o">=</span><span class="s2">&quot;stretch_width&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">down_payment_value_left_widget_box_index</span> <span class="o">=</span> <span class="n">left_widget_box</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">down_payment_value_widget</span><span class="p">)</span>
+
+<span class="n">right_widget_box</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">WidgetBox</span><span class="p">(</span>
+    <span class="s2">&quot;Property Tax:&quot;</span><span class="p">,</span>
+    <span class="n">prop_tax_type_widget</span><span class="p">,</span>
+    <span class="n">prop_tax_amount_widget</span><span class="p">,</span>
+    <span class="n">pmi_percent_widget</span><span class="p">,</span>
+    <span class="n">monthly_home_ins_prem_widget</span><span class="p">,</span>
+    <span class="n">monthly_hoa_fees_widget</span><span class="p">,</span>
+    <span class="n">sizing_mode</span><span class="o">=</span><span class="s2">&quot;stretch_width&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">prop_tax_amount_right_widget_box_index</span> <span class="o">=</span> <span class="n">right_widget_box</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">prop_tax_amount_widget</span><span class="p">)</span>
+
+<span class="n">num_tab_plots</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">tabs</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">Tabs</span><span class="p">(</span><span class="o">*</span><span class="nb">tuple</span><span class="p">((</span><span class="s2">&quot;placeholder&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_tab_plots</span><span class="p">)),</span> <span class="n">dynamic</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">layout</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span>
+    <span class="n">pn</span><span class="o">.</span><span class="n">pane</span><span class="o">.</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;# Mortgage Payment Calculator&quot;</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">),</span>
+    <span class="n">pn</span><span class="o">.</span><span class="n">Row</span><span class="p">(</span>
+        <span class="n">left_widget_box</span><span class="p">,</span>
+        <span class="n">right_widget_box</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="n">tabs</span><span class="p">,</span>
+    <span class="s2">&quot;*Home appreciation/depreciation not accounted for&quot;</span><span class="p">,</span>
+    <span class="n">sizing_mode</span><span class="o">=</span><span class="s2">&quot;stretch_width&quot;</span><span class="p">,</span>
+    <span class="n">max_width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># convenience pane update funcs</span>
+<span class="k">def</span> <span class="nf">set_down_payment_value_widget</span><span class="p">(</span><span class="n">new_widget</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">down_payment_value_left_widget_box_index</span><span class="p">):</span>
+    <span class="n">left_widget_box</span><span class="o">.</span><span class="fm">__setitem__</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">new_widget</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">set_prop_tax_value_widget</span><span class="p">(</span><span class="n">new_widget</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">prop_tax_amount_right_widget_box_index</span><span class="p">):</span>
+    <span class="n">right_widget_box</span><span class="o">.</span><span class="fm">__setitem__</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">new_widget</span><span class="p">)</span>
+    
+<span class="k">def</span> <span class="nf">set_plot</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">new_panel</span><span class="p">):</span>
+    <span class="n">tabs</span><span class="o">.</span><span class="fm">__setitem__</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">new_panel</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">down_payment_value_widget</span><span class="p">,</span> <span class="n">prop_tax_amount_widget</span>
+    
+
+    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;App Update - initial widget values: </span><span class="si">{</span><span class="p">[(</span><span class="n">x</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="n">home_value_widget</span><span class="p">,</span> <span class="n">annual_int_rate_widget</span><span class="p">,</span> <span class="n">loan_term_widget</span><span class="p">,</span> <span class="n">down_payment_type_widget</span><span class="p">,</span> <span class="n">down_payment_value_widget</span><span class="p">,</span> <span class="n">prop_tax_amount_widget</span><span class="p">,</span> <span class="n">prop_tax_type_widget</span><span class="p">,</span> <span class="n">monthly_home_ins_prem_widget</span><span class="p">,</span> <span class="n">monthly_hoa_fees_widget</span><span class="p">,</span> <span class="n">pmi_percent_widget</span><span class="p">]]</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;update event: </span><span class="si">{</span><span class="n">event</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="c1"># input validation</span>
+    <span class="n">home_value</span> <span class="o">=</span> <span class="n">home_value_widget</span><span class="o">.</span><span class="n">value</span>
+    <span class="n">annual_int_rate</span> <span class="o">=</span> <span class="n">annual_int_rate_widget</span><span class="o">.</span><span class="n">value</span>
+    <span class="n">loan_term</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">loan_term_widget</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+    <span class="n">down_payment_type</span> <span class="o">=</span> <span class="n">down_payment_type_widget</span><span class="o">.</span><span class="n">value</span>
+    <span class="n">down_payment_value</span> <span class="o">=</span> <span class="n">down_payment_value_widget</span><span class="o">.</span><span class="n">value</span>
+    <span class="n">prop_tax_amount</span> <span class="o">=</span> <span class="n">prop_tax_amount_widget</span><span class="o">.</span><span class="n">value</span>
+    <span class="n">prop_tax_type</span> <span class="o">=</span> <span class="n">prop_tax_type_widget</span><span class="o">.</span><span class="n">value</span>
+    <span class="n">monthly_home_ins_prem</span> <span class="o">=</span> <span class="n">monthly_home_ins_prem_widget</span><span class="o">.</span><span class="n">value</span>
+    <span class="n">monthly_hoa_fees</span> <span class="o">=</span> <span class="n">monthly_hoa_fees_widget</span><span class="o">.</span><span class="n">value</span>
+    <span class="n">pmi_percent</span> <span class="o">=</span> <span class="n">pmi_percent_widget</span><span class="o">.</span><span class="n">value</span>
+
+    <span class="c1"># trim all Spinner widget values to max</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">obj</span><span class="p">,</span> <span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">input</span><span class="o">.</span><span class="n">Spinner</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">end</span> <span class="ow">and</span> <span class="n">event</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">value</span> <span class="o">&gt;</span> <span class="n">event</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">end</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;trimming widget value </span><span class="si">{</span><span class="n">event</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">value</span><span class="si">}</span><span class="s1"> to </span><span class="si">{</span><span class="n">event</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">end</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+            
+            <span class="c1"># triggers another call to update</span>
+            <span class="n">event</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">end</span>
+            <span class="k">return</span>
+
+    <span class="c1"># update loan amount</span>
+    <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">obj</span> <span class="ow">in</span> <span class="p">{</span><span class="n">home_value_widget</span><span class="p">,</span> <span class="n">down_payment_value_widget</span><span class="p">}:</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">principal</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">loan_amortization_schedule</span><span class="p">(</span>
+            <span class="n">home_value</span><span class="p">,</span>
+            <span class="n">annual_int_rate</span><span class="p">,</span>
+            <span class="n">loan_term</span><span class="p">,</span>
+            <span class="n">down_payment_type</span><span class="p">,</span>
+            <span class="n">down_payment_value</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="c1"># doesn&#39;t trigger another call to update</span>
+        <span class="n">loan_amount_pane</span><span class="o">.</span><span class="n">object</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;### Loan Amount : $</span><span class="si">{</span><span class="n">principal</span><span class="si">:</span><span class="s2">0,.0f</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Updated Loan Amount Pane: $</span><span class="si">{</span><span class="n">principal</span><span class="si">:</span><span class="s1">0,.0f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        
+
+    <span class="c1"># update down payment from $ to % when down payment type changed</span>
+    <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">obj</span> <span class="ow">is</span> <span class="n">down_payment_type_widget</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">new</span> <span class="o">==</span> <span class="s2">&quot;Percentage&quot;</span><span class="p">:</span>
+            <span class="n">down_payment_value_widget</span> <span class="o">=</span> <span class="n">down_payment_percentage_value_widget</span>  
+            <span class="n">new_value</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span>
+                <span class="n">down_payment_value</span> <span class="o">/</span> <span class="n">home_value</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">2</span>
+            <span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">new</span> <span class="o">==</span> <span class="s2">&quot;Dollars&quot;</span><span class="p">:</span>
+            <span class="n">down_payment_value_widget</span> <span class="o">=</span> <span class="n">down_payment_dollars_value_widget</span>
+            <span class="n">new_value</span> <span class="o">=</span>  <span class="nb">round</span><span class="p">(</span>
+                <span class="n">home_value</span> <span class="o">*</span> <span class="n">down_payment_value</span> <span class="o">/</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span>
+            <span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;down_payment_value_widget.value = </span><span class="si">{</span><span class="n">new_value</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">down_payment_value_widget</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">new_value</span>
+        <span class="n">set_down_payment_value_widget</span><span class="p">(</span><span class="n">down_payment_value_widget</span><span class="p">)</span>
+        <span class="k">return</span>
+            
+
+    <span class="c1"># update down_payment_value_widget_max when home value changes</span>
+    <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">obj</span> <span class="ow">is</span> <span class="n">home_value_widget</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">down_payment_type</span> <span class="o">==</span> <span class="s1">&#39;Dollars&#39;</span><span class="p">:</span>
+            <span class="n">down_payment_dollars_value_widget</span><span class="o">.</span><span class="n">end</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">home_value</span> <span class="o">*</span> <span class="mf">0.99</span><span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;down_payment_value_widget.end = </span><span class="si">{</span><span class="n">home_value</span> <span class="o">*</span> <span class="mf">0.99</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">prop_tax_type</span> <span class="o">==</span> <span class="s1">&#39;Dollars&#39;</span><span class="p">:</span>
+            <span class="n">prop_tax_dollars_amount_widget</span><span class="o">.</span><span class="n">end</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">home_value</span> <span class="o">*</span> <span class="mf">0.03</span><span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;prop_tax_dollars_amount_widget.end = </span><span class="si">{</span><span class="n">home_value</span> <span class="o">*</span> <span class="mf">0.03</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">obj</span> <span class="ow">is</span> <span class="n">prop_tax_type_widget</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">new</span> <span class="o">==</span> <span class="s2">&quot;Percentage&quot;</span><span class="p">:</span>
+            <span class="n">prop_tax_amount_widget</span> <span class="o">=</span> <span class="n">prop_tax_percentage_amount_widget</span>
+            <span class="n">prop_tax_amount_widget</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span>
+                <span class="n">prop_tax_amount</span> <span class="o">/</span> <span class="n">home_value</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">2</span>
+            <span class="p">)</span>  <span class="c1"># triggers another update call</span>
+        <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">new</span> <span class="o">==</span> <span class="s2">&quot;Dollars&quot;</span><span class="p">:</span>
+            <span class="n">prop_tax_amount_widget</span> <span class="o">=</span> <span class="n">prop_tax_dollars_amount_widget</span>
+            <span class="n">prop_tax_amount_widget</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span>
+                <span class="n">home_value</span> <span class="o">*</span> <span class="n">prop_tax_amount</span> <span class="o">/</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span>
+            <span class="p">)</span>  <span class="c1"># triggers another update call</span>
+        <span class="n">set_prop_tax_value_widget</span><span class="p">(</span><span class="n">prop_tax_amount_widget</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="c1"># update monthly payment plot</span>
+    <span class="n">new_panel</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">panel</span><span class="p">(</span>
+            <span class="n">monthly_payment_breakdown_plot</span><span class="p">(</span>
+                <span class="n">home_value</span><span class="p">,</span>
+                <span class="n">annual_int_rate</span><span class="p">,</span>
+                <span class="n">loan_term</span><span class="p">,</span>
+                <span class="n">down_payment_type</span><span class="p">,</span>
+                <span class="n">down_payment_value</span><span class="p">,</span>
+                <span class="n">prop_tax_amount</span><span class="p">,</span>
+                <span class="n">prop_tax_type</span><span class="p">,</span>
+                <span class="n">monthly_home_ins_prem</span><span class="p">,</span>
+                <span class="n">monthly_hoa_fees</span><span class="p">,</span>
+                <span class="n">pmi_percent</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Mortgage Payment Breakdown&quot;</span><span class="p">,</span>
+            <span class="n">sizing_mode</span><span class="o">=</span><span class="s2">&quot;stretch_width&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="n">set_plot</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">new_panel</span><span class="p">)</span>
+
+    <span class="c1"># update mortgage amortization plot</span>
+    <span class="n">new_panel</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">panel</span><span class="p">(</span>
+                    <span class="n">mortgage_amortization_plot</span><span class="p">(</span>
+                        <span class="n">home_value</span><span class="p">,</span>
+                        <span class="n">annual_int_rate</span><span class="p">,</span>
+                        <span class="n">loan_term</span><span class="p">,</span>
+                        <span class="n">down_payment_type</span><span class="p">,</span>
+                        <span class="n">down_payment_value</span><span class="p">,</span>
+                        <span class="n">prop_tax_type</span><span class="p">,</span>
+                        <span class="n">prop_tax_amount</span><span class="p">,</span>
+                        <span class="n">monthly_home_ins_prem</span><span class="p">,</span>
+                        <span class="n">monthly_hoa_fees</span><span class="p">,</span>
+                        <span class="n">pmi_percent</span><span class="p">,</span>
+                    <span class="p">),</span>
+            <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Amortization Schedule&quot;</span><span class="p">,</span>
+            <span class="n">sizing_mode</span><span class="o">=</span><span class="s2">&quot;stretch_width&quot;</span>
+    <span class="p">)</span>
+    <span class="n">set_plot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">new_panel</span><span class="p">)</span>
+
+    <span class="c1"># update principal over time plot</span>
+    <span class="n">new_panel</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">panel</span><span class="p">(</span>
+                    <span class="n">principal_vs_time_plot</span><span class="p">(</span>
+                        <span class="n">home_value</span><span class="p">,</span>
+                        <span class="n">annual_int_rate</span><span class="p">,</span>
+                        <span class="n">loan_term</span><span class="p">,</span>
+                        <span class="n">down_payment_type</span><span class="p">,</span>
+                        <span class="n">down_payment_value</span><span class="p">,</span>
+                    <span class="p">),</span>
+                    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Principal Over Time&quot;</span><span class="p">,</span>
+                    <span class="n">sizing_mode</span><span class="o">=</span><span class="s2">&quot;stretch_width&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">set_plot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">new_panel</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">None</span>
+
+
+<span class="c1"># register watchers  (loan_amount_pane not included)</span>
+<span class="k">for</span> <span class="n">widget</span> <span class="ow">in</span> <span class="p">[</span>
+    <span class="n">home_value_widget</span><span class="p">,</span>
+    <span class="n">down_payment_type_widget</span><span class="p">,</span>
+    <span class="n">down_payment_dollars_value_widget</span><span class="p">,</span>
+    <span class="n">down_payment_percentage_value_widget</span><span class="p">,</span>
+    <span class="n">annual_int_rate_widget</span><span class="p">,</span>
+    <span class="n">loan_term_widget</span><span class="p">,</span>
+    <span class="n">prop_tax_type_widget</span><span class="p">,</span>
+    <span class="n">prop_tax_percentage_amount_widget</span><span class="p">,</span>
+    <span class="n">prop_tax_dollars_amount_widget</span><span class="p">,</span>
+    <span class="n">monthly_home_ins_prem_widget</span><span class="p">,</span>
+    <span class="n">monthly_hoa_fees_widget</span><span class="p">,</span>
+    <span class="n">pmi_percent_widget</span><span class="p">,</span>
+<span class="p">]:</span>
+    <span class="n">widget</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">watch</span><span class="p">(</span><span class="n">update</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">)</span>
+
+<span class="c1"># trigger an initial watcher</span>
+<span class="n">home_value_widget</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">initial_home_cost</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;----------Done triggering initial watcher----------&#39;</span><span class="p">)</span>
+<span class="n">layout</span><span class="o">.</span><span class="n">servable</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python37764bitbasec7102627981d49729f147245c69351c4",
+            path: "./panel_aids/mortgage_calculator"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python37764bitbasec7102627981d49729f147245c69351c4'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="readme.html" title="previous page">Mortgage Calculator</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Quansight<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,534 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panel/Holoviews Learning Aid &#8212; Panel learning aids</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Mortgage Calculator" href="readme.html" />
+    <link rel="prev" title="Panel Learning Aid" href="../../readme.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Panel learning aids</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../readme.html">
+   Panel Learning Aid
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Panel/Holoviews Learning Aid
+  </a>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="readme.html">
+     Mortgage Calculator
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/panel_aids/mortgage_calculator/index.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/panel_aids/mortgage_calculator/index.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#building-a-web-app-with-panel-and-holoviews">
+   Building a Web App with Panel and Holoviews
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sample-app">
+   Sample App
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-aid">
+   Learning Aid
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#background">
+   1. Background
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prototyping-in-jupyter">
+     Prototyping in Jupyter
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#panel-basics">
+     Panel Basics
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#building-the-app-backbone">
+   2. Building the App Backbone
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#making-a-sample-layout">
+     Making a sample Layout
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#holoviews-plots">
+   3. Holoviews Plots
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#closing-notes">
+   4. Closing Notes
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="panel-holoviews-learning-aid">
+<h1>Panel/Holoviews Learning Aid<a class="headerlink" href="#panel-holoviews-learning-aid" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="building-a-web-app-with-panel-and-holoviews">
+<h2>Building a Web App with Panel and Holoviews<a class="headerlink" href="#building-a-web-app-with-panel-and-holoviews" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">panel</span> <span class="k">as</span> <span class="nn">pn</span>
+<span class="kn">import</span> <span class="nn">holoviews</span> <span class="k">as</span> <span class="nn">hv</span>
+
+<span class="kn">from</span> <span class="nn">panel_aids.mortgage_calculator</span> <span class="kn">import</span> <span class="n">layout</span> <span class="k">as</span> <span class="n">mortgage_app</span>
+
+<span class="n">pn</span><span class="o">.</span><span class="n">extension</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="sample-app">
+<h2>Sample App<a class="headerlink" href="#sample-app" title="Permalink to this headline">¶</a></h2>
+<p>Try out the app below.  It’s a mortgage calculator app allowing you to see your mortgage payment, amortization schedule, and principal paid over time.</p>
+<div class="alert alert-info">
+Note: For the app below to work in JupyterLab, you'll need to run <b>jupyter labextension install @pyviz/jupyterlab_pyviz</b> in the terminal to install the needed labextension.  This is not needed if running in a Jupyter notebook outside of JupyterLab.
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mortgage_app</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The app above was built with Python, and without directly writing any css or javascript.  Panel and Holoviews are a great way for data scientist or others to build a web app.  This learning aid is designed to demonstrate some common usage, and encourage you to build your own app from there.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="learning-aid">
+<h2>Learning Aid<a class="headerlink" href="#learning-aid" title="Permalink to this headline">¶</a></h2>
+<p>Several sections follow below demonstrating key knowledge used to build the app above.</p>
+<ol class="simple">
+<li><p>Background</p></li>
+<li><p>Building the App Backbone</p></li>
+<li><p>HoloViews Plots</p></li>
+<li><p>Closing Notes</p></li>
+</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="background">
+<h2>1. Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="prototyping-in-jupyter">
+<h3>Prototyping in Jupyter<a class="headerlink" href="#prototyping-in-jupyter" title="Permalink to this headline">¶</a></h3>
+<p>Panel and Holoviews are nice because they integrate well with Jupyter notebooks and Jupyterlab.  You can build your app and display it interactively in Jupyterlab to speed up development.  For this to work however, make sure to:</p>
+<ol class="simple">
+<li><p>If running in JupyterLab, run <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">labextension</span> <span class="pre">install</span> <span class="pre">&#64;pyviz/jupyterlab_pyviz</span></code> in the terminal to install the needed labextension if you didn’t above.  This is not needed if running in a Jupyter notebook outside of JupyterLab.</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">panel</span> <span class="pre">as</span> <span class="pre">pn</span></code> and <code class="docutils literal notranslate"><span class="pre">pn.extension()</span></code> at the top of the notebook.</p></li>
+</ol>
+<p>After doing so, you should be all set to prototype the app within jupyterlab.</p>
+</div>
+<div class="section" id="panel-basics">
+<h3>Panel Basics<a class="headerlink" href="#panel-basics" title="Permalink to this headline">¶</a></h3>
+<p>Panel has 3 main components: panes, widgets, and panels.</p>
+<ul class="simple">
+<li><p><strong>Panes</strong> wrap external viewable items, like markdown, plots, gifs, and even video.</p></li>
+<li><p><strong>Widgets</strong> are used to manipulate your app - think sliders, file selectors, password inputs, etc.</p></li>
+<li><p><strong>Panels</strong> are used to arrange panes and widgets.  The 4 main types of panels are Row, Column, Tabs, and GridSpec.</p></li>
+</ul>
+<p>Take a look at more examples of panes, widgets, and panels (layouts) at <a class="reference external" href="https://panel.holoviz.org/reference/index.html">https://panel.holoviz.org/reference/index.html</a>.  You can also learn about what parameters each widget supports by clicking on a particular widget from there.</p>
+</div>
+</div>
+<div class="section" id="building-the-app-backbone">
+<h2>2. Building the App Backbone<a class="headerlink" href="#building-the-app-backbone" title="Permalink to this headline">¶</a></h2>
+<p>First, let’s make a widget by running the code below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">radio_button</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">RadioButtonGroup</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">],</span> <span class="n">value</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;radio_buttons&#39;</span><span class="p">)</span>
+<span class="n">radio_button</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When choosing a widget for your app, try to choose a widget made for the applicable datatype (string, float, int, set, etc.).  This will greatly reduce the amount of custom input validation you’ll need to do.  Also notice that you can manipulate widgets in the UI or in code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">radio_button</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="making-a-sample-layout">
+<h3>Making a sample Layout<a class="headerlink" href="#making-a-sample-layout" title="Permalink to this headline">¶</a></h3>
+<p>We combine a widget and some markdown panes with a Column panel in the next cell.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Markdown Pane</span>
+<span class="n">radio_button_display</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">pane</span><span class="o">.</span><span class="n">Markdown</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Radio Button Value: </span><span class="si">{</span><span class="n">radio_button</span><span class="o">.</span><span class="n">value</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># Combine Panes and Widget in the Column panel</span>
+<span class="n">layout</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="s1">&#39;## My Radio Button App&#39;</span><span class="p">,</span> <span class="n">radio_button</span><span class="p">,</span> <span class="n">radio_button_display</span><span class="p">)</span>
+<span class="n">layout</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You’ll notice the display doesn’t update when a different radio button is pressed. To update we need to make a function to call when a specific widget’s value is modified.</p>
+<div class="alert alert-info">
+Note: Panel has four different API's.  This learning aid uses the callback API, which is the lowest level of the four, and gives the most control.
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Defines the function to call when Radio Box is updated.</span>
+<span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">obj</span> <span class="ow">is</span> <span class="n">radio_button</span><span class="p">:</span>
+        <span class="n">radio_button_display</span><span class="o">.</span><span class="n">object</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;Radio Button Value: </span><span class="si">{</span><span class="n">radio_button</span><span class="o">.</span><span class="n">value</span><span class="si">}</span><span class="s1">&#39;</span>
+
+<span class="c1"># Run the update function when the &quot;value&quot; parameter of radio_button widget changes.</span>
+<span class="n">radio_button</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">watch</span><span class="p">(</span><span class="n">update</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">)</span>
+
+<span class="c1"># Now the display updates when the button is pressed.</span>
+<span class="n">layout</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-warning">
+Be careful about running the above cell multiple times.  Doing so will attach multiple function callbacks to the radio button, and the app may not behave as expected.  Restarting the kernel, and rerunning the cells will fix this.
+</div><p>You may be wondering why the if statement in the update function is needed.  In this simple example, it’s not.  However, as we add more widgets I’ve found it’s nice to have a single <code class="docutils literal notranslate"><span class="pre">update</span></code> function for all widgets in order to more precisely specify the order in which pane updates need to happen as well as share intermediate results computed during the update function.</p>
+</div>
+</div>
+<div class="section" id="holoviews-plots">
+<h2>3. Holoviews Plots<a class="headerlink" href="#holoviews-plots" title="Permalink to this headline">¶</a></h2>
+<p>The app above could serve as the start of many, many apps, but how exactly do we update plots based on widgets instead of just some text?  It’s pretty simple, we just replace the Markdown pane with a HoloViews pane.  The panel HoloViews pane is a wrapper around Holoviews plots.  Other plotting libraries (matplotlib, plotly, etc.) are supported as well, but I’ll be demonstrating with Holoviews plots.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define some sample data and import holoviews</span>
+<span class="kn">from</span> <span class="nn">bokeh.sampledata.autompg</span> <span class="kn">import</span> <span class="n">autompg</span>
+<span class="kn">import</span> <span class="nn">holoviews</span> <span class="k">as</span> <span class="nn">hv</span>
+
+<span class="c1"># show data sample</span>
+<span class="n">autompg</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A complete tutorial of plotting in Holoviews is beyond the scope of this learning aid. For this example, just know that <code class="docutils literal notranslate"><span class="pre">hv.Scatter(dataframe,</span> <span class="pre">kdims='x_column',</span> <span class="pre">vdims='y_column')</span></code> will produce a scatter plot.
+The documentation <a class="reference external" href="https://holoviews.org/getting_started/Introduction.html">https://holoviews.org/getting_started/Introduction.html</a> can be consulted for additional specifics.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hv</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">autompg</span><span class="p">,</span> <span class="n">kdims</span><span class="o">=</span><span class="s1">&#39;mpg&#39;</span><span class="p">,</span> <span class="n">vdims</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">opts</span><span class="p">(</span><span class="n">tools</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;hover&#39;</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Example Scatter Plot&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s make an app which toggles the axes of the plot.  First we’ll make the radio buttons to toggle the axis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">radio_opts</span> <span class="o">=</span> <span class="p">[</span><span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">autompg</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">col</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">{</span><span class="s1">&#39;origin&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">}]</span>
+<span class="n">auto_mpg_radio_x</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">RadioButtonGroup</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="n">radio_opts</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s1">&#39;mpg&#39;</span><span class="p">)</span>
+<span class="n">auto_mpg_radio_y</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">RadioButtonGroup</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="n">radio_opts</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s1">&#39;mpg&#39;</span><span class="p">)</span>
+<span class="n">auto_mpg_radio_x</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s set up the layout of the plot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">auto_plot</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">pane</span><span class="o">.</span><span class="n">HoloViews</span><span class="p">(</span><span class="nb">object</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_width&#39;</span><span class="p">)</span> <span class="c1"># empty plot initially</span>
+
+<span class="n">layout</span> <span class="o">=</span> <span class="n">pn</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span>
+            <span class="s1">&#39;## Auto MPG App&#39;</span><span class="p">,</span>
+            <span class="n">pn</span><span class="o">.</span><span class="n">Row</span><span class="p">(</span><span class="s1">&#39;#### x-axis:&#39;</span><span class="p">,</span> <span class="n">auto_mpg_radio_x</span><span class="p">),</span>
+            <span class="n">pn</span><span class="o">.</span><span class="n">Row</span><span class="p">(</span><span class="s1">&#39;#### y-axis:&#39;</span><span class="p">,</span> <span class="n">auto_mpg_radio_y</span><span class="p">),</span>
+            <span class="n">auto_plot</span><span class="p">,</span>
+            <span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_width&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next let’s configure the plot to update when the widget values are changed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">autompg_plot</span><span class="p">(</span><span class="n">x_axis</span><span class="p">,</span> <span class="n">y_axis</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">hv</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">autompg</span><span class="p">,</span> <span class="n">kdims</span><span class="o">=</span><span class="n">x_axis</span><span class="p">,</span> <span class="n">vdims</span><span class="o">=</span><span class="n">y_axis</span><span class="p">)</span><span class="o">.</span><span class="n">opts</span><span class="p">(</span><span class="n">tools</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;hover&#39;</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">max_width</span><span class="o">=</span><span class="mi">750</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">auto_mpg_update</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">obj</span> <span class="ow">is</span> <span class="n">auto_mpg_radio_x</span><span class="p">:</span>
+        <span class="n">auto_plot</span><span class="o">.</span><span class="n">object</span> <span class="o">=</span> <span class="n">autompg_plot</span><span class="p">(</span><span class="n">auto_mpg_radio_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">auto_mpg_radio_y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">obj</span> <span class="ow">is</span> <span class="n">auto_mpg_radio_y</span><span class="p">:</span>
+        <span class="n">auto_plot</span><span class="o">.</span><span class="n">object</span> <span class="o">=</span> <span class="n">autompg_plot</span><span class="p">(</span><span class="n">auto_mpg_radio_x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">auto_mpg_radio_y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+
+<span class="c1"># Run the update function when the &quot;value&quot; parameter of radio_button widget changes.</span>
+<span class="k">for</span> <span class="n">widget</span> <span class="ow">in</span> <span class="p">[</span><span class="n">auto_mpg_radio_x</span><span class="p">,</span> <span class="n">auto_mpg_radio_y</span><span class="p">]:</span>
+    <span class="n">widget</span><span class="o">.</span><span class="n">param</span><span class="o">.</span><span class="n">watch</span><span class="p">(</span><span class="n">auto_mpg_update</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">)</span>
+
+<span class="c1"># trigger initial plot update</span>
+<span class="n">auto_mpg_radio_y</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s1">&#39;cyl&#39;</span>
+
+<span class="n">layout</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-warning">
+Be careful about running the above cell multiple times.  Doing so will attach multiple function callbacks to the radio button, and the app may not behave as expected.  Restarting the kernel, and rerunning the cells will fix this.
+</div></div>
+<div class="section" id="closing-notes">
+<h2>4. Closing Notes<a class="headerlink" href="#closing-notes" title="Permalink to this headline">¶</a></h2>
+<p>After you build an app, you’ll want to deploy the app so others can view it.  Deployment is beyond the scope of this learning aid, but the documentation <a class="reference external" href="https://panel.holoviz.org/user_guide/Server_Deployment.html">https://panel.holoviz.org/user_guide/Server_Deployment.html</a> covers a variety of deployment scenarios.  MyBinder is useful for apps that are for demonstration purposes only.  If you want to see how your app would look deployed by itself, then you can run <code class="docutils literal notranslate"><span class="pre">app.show()</span></code> in the notebook, and a new browser tab will open up with the app served on it.  Run the cell below to see it in action.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">layout</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>  <span class="c1"># You won&#39;t be able to view this from binder, but will be able to if running locally.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that you have a simple app to start from, keep going and build your own!</p>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./panel_aids/mortgage_calculator"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="../../readme.html" title="previous page">Panel Learning Aid</a>
+    <a class='right-next' id="next-link" href="readme.html" title="next page">Mortgage Calculator</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Quansight<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>
