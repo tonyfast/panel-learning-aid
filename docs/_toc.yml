@@ -1,0 +1,5 @@
+- file: README
+- file: panel_aids/mortgage_calculator/index
+  sections:
+    - file: panel_aids/mortgage_calculator/readme
+    - file: panel_aids/mortgage_calculator/mortgage_calculator

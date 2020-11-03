@@ -10,7 +10,11 @@ home-page = "http://github.com/Quansight/panel-learning-aids"
 classifiers = ["License :: OSI Approved :: MIT License"]
 requires = ["mortgage", "panel", "pandas"]
 
-[tool.pytest]
+[tool.flit.metadata.requires-extra]
+test = []
+doc = ["jupyter-book", "pyppeteer",  "doit"]
+
+[tool.pytest.ini_options]
 addopts = "-v"
 doctest_optionflags = "NORMALIZE_WHITESPACE ELLIPSIS"
 
