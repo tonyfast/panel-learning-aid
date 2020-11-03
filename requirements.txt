@@ -1,0 +1,9 @@
+python
+pandas
+panel
+holoviews
+hvplot
+jupyterlab
+pytest
+appmode
+mortgage
