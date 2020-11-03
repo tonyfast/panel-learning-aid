@@ -21,6 +21,7 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Test with pytest
       run: |
+        pip install git+https://github.com/deathbeds/tingle
         pip install .[test]
         pip install pytest-github-actions-annotate-failures
         pytest
