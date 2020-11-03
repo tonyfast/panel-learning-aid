@@ -24,6 +24,7 @@ jobs:
     - name: setup
       run: |
         sudo apt install pandoc      
+        pip install git+https://github.com/deathbeds/tingle
         pip install .[doc]
     - name: Build docs
       run: |
