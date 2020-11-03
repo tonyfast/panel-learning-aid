@@ -8,7 +8,7 @@ author = "Adam Lewis"
 author-email = "balast@gmail.com"
 home-page = "http://github.com/Quansight/panel-learning-aids"
 classifiers = ["License :: OSI Approved :: MIT License"]
-requires = ["mortgage", "panel", "pandas"]
+requires = ["mortgage", "panel", "pandas", "importnb"]
 
 [tool.flit.metadata.requires-extra]
 test = []
