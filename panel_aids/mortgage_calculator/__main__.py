@@ -1,4 +1,4 @@
 with __import__("tingle").Markdown():
     from . import readme
-    
-readme.main()
+
+__import__('typer').run(readme.main)
