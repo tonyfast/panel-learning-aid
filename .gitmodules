@@ -1,0 +1,6 @@
+[submodule "panel_aids/baby_names"]
+	path = panel_aids/baby_names
+	url = https://github.com/dillonroach/panel_names_app
+[submodule "panel_aids/panel_n_widgets"]
+	path = panel_aids/panel_n_widgets
+	url = https://github.com/ppwadhwa/oss-notebooks
