@@ -17,8 +17,6 @@ You can see the app by navigating to the url which will appear on the command li
 
 ## Run tests
 To run the repo tests, run the following in the command line when in the repo root folder.  
-- `pytest`
-
 
 
     def main():
