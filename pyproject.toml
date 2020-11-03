@@ -1,0 +1,20 @@
+[build-system]
+requires = ["flit_core >=2,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.flit.metadata]
+module = "panel_aids"
+author = "Adam Lewis"
+author-email = "balast@gmail.com"
+home-page = "http://github.com/Quansight/panel-learning-aids"
+classifiers = ["License :: OSI Approved :: MIT License"]
+requires = ["mortgage", "panel", "pandas"]
+
+[tool.pytest]
+addopts = "-v"
+doctest_optionflags = "NORMALIZE_WHITESPACE ELLIPSIS"
+
+[tool.isort]
+line_length = 99
+multi_line_output = 3
+include_trailing_comma = true

@@ -1,4 +1,4 @@
-name: panel
+name: panel_aids
 channels:
   - conda-forge
   - defaults
