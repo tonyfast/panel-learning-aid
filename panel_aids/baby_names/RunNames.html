@@ -1,0 +1,406 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quick Dashboarding With Panel &#8212; Panel learning aids</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Panel learning aids</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../readme.html">
+   Panel Learning Aid
+  </a>
+ </li>
+</ul>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mortgage_calculator/index.html">
+   Panel/Holoviews Learning Aid
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/panel_aids/baby_names/RunNames.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/panel_aids/baby_names/RunNames.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="quick-dashboarding-with-panel">
+<h1>Quick Dashboarding With Panel<a class="headerlink" href="#quick-dashboarding-with-panel" title="Permalink to this headline">¶</a></h1>
+<p>A bespoke, polished data science dashboard can be a beautiful thing for anyone looking to make data-driven decisions. And yet, not every project can afford setting up elaborate dashboards that cost money and developer time.</p>
+<p>In this post, we show you how to construct a quick dashboard using <a class="reference external" href="https://panel.holoviz.org/">Panel</a> &amp; Python without ever leaving the comfort of your Jupyter notebook.</p>
+<p>For this example, we want to create a dynamic plot dashboard displaying historical trends of popular (user-supplied) baby names.</p>
+<p>While the historical trends of name registrations are not at the forefront of business decisions, similar name-indexed data queries could involve stock indexes, product names in your catalog (or a competitor’s), or perhaps predictions of future trends for your named-apparel business.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#%%HTML</span>
+<span class="c1">#&lt;video controls=&quot;&quot; autoplay=&quot;&quot; name=&quot;media&quot; loop=&quot;&quot;&gt;&lt;source src=&quot;panel_example.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This baby-name data originally comes from <a class="reference external" href="https://catalog.data.gov/dataset/baby-names-from-social-security-card-applications-national-level-data">the US Social Security open data</a>;
+we have modified it for ease of use and to off-load some pre-processing needed for the final plots.</p>
+<p>For each observation, we have preserved <code class="docutils literal notranslate"><span class="pre">Year</span></code>, <code class="docutils literal notranslate"><span class="pre">Name</span></code>, and <code class="docutils literal notranslate"><span class="pre">Gender</span></code> as features from the original data. We also have a feature <code class="docutils literal notranslate"><span class="pre">Normalized</span></code> that represents the percentage of all names within a given year.</p>
+<p>We could add names common to <code class="docutils literal notranslate"><span class="pre">M</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">F</span></code> genders - say <code class="docutils literal notranslate"><span class="pre">Dillon</span> <span class="pre">(M)</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">Dillon</span> <span class="pre">(F)</span></code> - but we leave them distinct here to preserve their individual trends.</p>
+<p>We present a random slice of the data below to build intuition.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&lt;style&gt;.container { width:90% !important; }&lt;/style&gt;&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span>
+<span class="kn">import</span> <span class="nn">hvplot.pandas</span>
+<span class="kn">import</span> <span class="nn">panel</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;SSNames.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;index&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;year&quot;</span>
+<span class="n">left_panel_width</span><span class="o">=</span><span class="mi">300</span>
+
+<span class="n">panel</span><span class="o">.</span><span class="n">extension</span><span class="p">()</span> <span class="c1">#this call is neccessary to make panel behave inside jupyter</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>With our data in hand, we first want to define a plotter function. This function produces plots of historical trends of registered baby names over a range of years with certain scalings (all user-specified). If you’re unfamiliar with Python, it’s enough to simply say that this function produces the plot we want without any interactive components. Without Panel, you can invoke this function yourself to generate plots in Jupyter using different input values supplied by hand.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plotter</span><span class="p">(</span><span class="n">names_list</span><span class="p">,</span> <span class="n">names_list2</span><span class="p">,</span> <span class="n">years</span><span class="p">,</span> <span class="n">scale</span><span class="p">,</span> <span class="n">scale2</span><span class="p">):</span>
+    
+    <span class="c1">################</span>
+    <span class="c1"># Input cleaning</span>
+    <span class="c1"># Handles empty input(s), cleans format/capitalization for matching, builds lists</span>
+    
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">names_list</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">names_list</span> <span class="o">=</span> <span class="s2">&quot;No&quot;</span>
+        <span class="n">names_list_f</span> <span class="o">=</span> <span class="s2">&quot;No&quot;</span>
+    <span class="k">else</span><span class="p">:</span> 
+        <span class="n">names_list_f</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">names_list</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)]</span>
+        
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">names_list2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">names_list2</span> <span class="o">=</span> <span class="s2">&quot;No&quot;</span>
+        <span class="n">names_list2_f</span> <span class="o">=</span> <span class="s2">&quot;No&quot;</span>
+    <span class="k">else</span><span class="p">:</span> 
+        <span class="n">names_list2_f</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">names_list2</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)]</span>
+
+    <span class="c1">###############</span>
+    <span class="c1"># Dataframe re-configure based on names input</span>
+    <span class="c1"># source used as preliminary dataframe stripped down to only input names, names converted to &#39;name (F/M)&#39;</span>
+    
+    <span class="n">test_frames</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">names_list_f</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Gender&quot;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;M&#39;</span><span class="p">)]</span>
+    <span class="n">test_frames2</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">names_list2_f</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Gender&quot;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;F&#39;</span><span class="p">)]</span>
+    
+    <span class="n">frames</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">test_frames</span><span class="p">,</span><span class="n">test_frames2</span><span class="p">])</span>
+    <span class="n">frames</span><span class="p">[</span><span class="s2">&quot;NameG&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">frames</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot; (&quot;</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="s2">&quot;Gender&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">frames</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;Gender&quot;</span><span class="p">,</span><span class="s2">&quot;Name&quot;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">frames</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;year&quot;</span>
+    
+    <span class="n">listed_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">frames</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;NameG&quot;</span><span class="p">))[</span><span class="mi">0</span><span class="p">]]</span>
+    
+    <span class="n">source</span> <span class="o">=</span> <span class="n">frames</span><span class="p">[</span><span class="n">frames</span><span class="p">[</span><span class="s2">&quot;NameG&quot;</span><span class="p">]</span><span class="o">==</span><span class="n">names_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;NameG&quot;</span><span class="p">,</span><span class="s2">&quot;Normalized&quot;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">frames</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;NameG&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get_group</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="s2">&quot;Normalized&quot;</span><span class="p">:</span><span class="n">i</span><span class="p">},</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;NameG&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">listed_names</span><span class="p">],</span><span class="n">how</span><span class="o">=</span><span class="s2">&quot;outer&quot;</span><span class="p">)</span>
+    <span class="n">source</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    
+    
+    <span class="c1">###############</span>
+    <span class="c1"># Conditional axis labeling based on optional checkboxes</span>
+    <span class="c1"># modifies data in source dataframe by optional metric(s)</span>
+    <span class="c1"># finally, returns hvplot objects that contain our final plots</span>
+    
+    <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">% o</span><span class="s2">f All Names&quot;</span>
+    
+    <span class="k">if</span> <span class="n">scale</span><span class="p">:</span>
+        <span class="n">averages</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">yearly_average</span><span class="p">,</span><span class="n">how</span><span class="o">=</span><span class="s2">&quot;outer&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">listed_names</span><span class="p">:</span>
+            <span class="n">source</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">averages</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="n">averages</span><span class="p">[</span><span class="s2">&quot;Normalized&quot;</span><span class="p">]</span>
+        <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">% o</span><span class="s2">f Names / Yearly-Average&quot;</span>
+    
+    <span class="k">if</span> <span class="n">scale2</span><span class="p">:</span>
+        <span class="n">averages2</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">yearly_unique</span><span class="p">,</span><span class="n">how</span><span class="o">=</span><span class="s2">&quot;outer&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">listed_names</span><span class="p">:</span>
+            <span class="n">source</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">averages2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">averages2</span><span class="p">[</span><span class="s2">&quot;Normalized&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">100000</span>
+        <span class="k">if</span> <span class="n">scale</span><span class="p">:</span>
+            <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;(</span><span class="si">% o</span><span class="s2">f Names / Yearly-Average) * Yearly-Uniques / 10^5&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">% o</span><span class="s2">f Names * Yearly-Uniques / 10^5&quot;</span>
+    
+    <span class="k">if</span> <span class="s2">&quot;No (F)&quot;</span> <span class="ow">in</span> <span class="n">listed_names</span><span class="p">:</span> <span class="n">listed_names</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;No (F)&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="s2">&quot;No (M)&quot;</span> <span class="ow">in</span> <span class="n">listed_names</span><span class="p">:</span> <span class="n">listed_names</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;No (M)&quot;</span><span class="p">)</span>
+    <span class="n">to_plot</span> <span class="o">=</span> <span class="n">source</span><span class="p">[(</span><span class="n">source</span><span class="o">.</span><span class="n">index</span><span class="o">&gt;=</span><span class="n">years</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">source</span><span class="o">.</span><span class="n">index</span><span class="o">&lt;=</span><span class="n">years</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+    
+    <span class="k">return</span> <span class="n">to_plot</span><span class="o">.</span><span class="n">hvplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="p">(</span><span class="n">listed_names</span><span class="p">),</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.04</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;area&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="s2">&quot;top_left&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">value_label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span> <span class="o">*</span> <span class="n">to_plot</span><span class="o">.</span><span class="n">hvplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="p">(</span><span class="n">listed_names</span><span class="p">),</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="s2">&quot;top_left&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">value_label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span><span class="o">.</span><span class="n">opts</span><span class="p">(</span><span class="n">toolbar</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If calling <code class="docutils literal notranslate"><span class="pre">plotter</span></code> itself were enough, we’d be done. In this case, we want to share a plotting tool with a boss or friends. This means we want some interactive elements for our dashboard: <em>widgets</em>.</p>
+<p>Widgets are often the basic building blocks of a Panel dashboard. These components are familiar to anyone who has seen web forms previously. For the use-case here, we need only three types of Panel widget: <code class="docutils literal notranslate"><span class="pre">TextInput</span></code> (to enter names), a <code class="docutils literal notranslate"><span class="pre">RangeSlider</span></code> (to select the years to plot), and <code class="docutils literal notranslate"><span class="pre">Checkbox</span></code> (to toggle optional metrics).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tickers_male</span> <span class="o">=</span> <span class="n">panel</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">TextInput</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Names (M)&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;Andrew&quot;</span><span class="p">,</span> <span class="n">placeholder</span><span class="o">=</span><span class="s1">&#39;Enter Names Here&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">left_panel_width</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+
+<span class="n">tickers_female</span> <span class="o">=</span> <span class="n">panel</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">TextInput</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Names (F)&#39;</span><span class="p">,</span> <span class="n">placeholder</span><span class="o">=</span><span class="s1">&#39;Enter Names Here&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">left_panel_width</span><span class="p">)</span>
+<span class="n">tickers_female</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;Sarah&quot;</span> <span class="c1"># Alternative default value in original widget declaration</span>
+
+<span class="n">years_range</span> <span class="o">=</span> <span class="n">panel</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">RangeSlider</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Years&#39;</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1880</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mi">2018</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="p">(</span><span class="mi">1880</span><span class="p">,</span> <span class="mi">2018</span><span class="p">),</span> <span class="n">step</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">left_panel_width</span><span class="p">)</span>
+
+<span class="n">checkbox_year</span> <span class="o">=</span> <span class="n">panel</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">Checkbox</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Scale by Yearly Average&#39;</span><span class="p">)</span>
+<span class="n">checkbox_nunique</span> <span class="o">=</span> <span class="n">panel</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">Checkbox</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Scale by Yearly Unique Name Entries&#39;</span><span class="p">)</span>
+
+<span class="n">yearly_average</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;year&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">yearly_unique</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;year&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()[</span><span class="s2">&quot;Normalized&quot;</span><span class="p">]</span> <span class="c1"># this metric double-counts names both in M and F categories; a careful analysis might want to split them up.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The function <code class="docutils literal notranslate"><span class="pre">panel.interact</span></code> makes it straightforward to connect the plotter function with the preceding widgets. We simply supply the function (<code class="docutils literal notranslate"><span class="pre">plotter</span></code>) as the first input argument to <code class="docutils literal notranslate"><span class="pre">panel.interact</span></code>. The remaining input arguments associate widgets with <code class="docutils literal notranslate"><span class="pre">plotter</span></code>’s input arguments. Be certain that the widget output data types match with <code class="docutils literal notranslate"><span class="pre">plotter</span></code>’s requirements. For example, the input <code class="docutils literal notranslate"><span class="pre">years</span></code> should be a (sorted) list or tuple of two distinct integers; a <code class="docutils literal notranslate"><span class="pre">RangeSlider</span></code> with specified values  for <code class="docutils literal notranslate"><span class="pre">start</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">stop</span></code> provides a valid tuple.</p>
+<p>Panel also enables arranging elements of your dashboard with <code class="docutils literal notranslate"><span class="pre">Row</span></code> and <code class="docutils literal notranslate"><span class="pre">Column</span></code> objects. For instance, below, <code class="docutils literal notranslate"><span class="pre">dashboard[0]</span></code> contains all the input widgets, while <code class="docutils literal notranslate"><span class="pre">dashboard[1]</span></code> is the output of the plotter.</p>
+<p>The addition of <code class="docutils literal notranslate"><span class="pre">.servable()</span></code> to your panel layout allows the entire notebook to be called by <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">panel</span> <span class="pre">serve</span> <span class="pre">&lt;Notebook-Path&gt;</span></code> from the command line (provided you have Panel installed). This allows multiple clients to connect to this service via web browsers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interact</span> <span class="o">=</span> <span class="n">panel</span><span class="o">.</span><span class="n">interact</span><span class="p">(</span><span class="n">plotter</span><span class="p">,</span> <span class="n">names_list</span><span class="o">=</span><span class="n">tickers_male</span><span class="p">,</span> <span class="n">names_list2</span><span class="o">=</span><span class="n">tickers_female</span><span class="p">,</span> <span class="n">years</span><span class="o">=</span><span class="n">years_range</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">checkbox_year</span><span class="p">,</span> <span class="n">scale2</span><span class="o">=</span><span class="n">checkbox_nunique</span><span class="p">)</span>
+
+<span class="n">html_pane</span> <span class="o">=</span> <span class="n">panel</span><span class="o">.</span><span class="n">pane</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;&lt;h2 style=&quot;text-align:Center&quot;&gt;Social Security Names Plotter&lt;/h2&gt;&quot;&quot;&quot;</span><span class="p">,</span> <span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_width&#39;</span><span class="p">)</span>
+<span class="n">html_pane2</span> <span class="o">=</span> <span class="n">panel</span><span class="o">.</span><span class="n">pane</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;&lt;h4 style=&quot;text-align:Center&quot;&gt;Names are not case-sensitive, and should be entered like: Andrew, Dillon, Travis &lt;br&gt;&lt;br&gt; Hit enter in text field to re-render&lt;/h4&gt;&quot;&quot;&quot;</span><span class="p">,</span> <span class="n">sizing_mode</span><span class="o">=</span><span class="s1">&#39;stretch_width&#39;</span><span class="p">)</span>
+
+<span class="n">panel</span><span class="o">.</span><span class="n">Row</span><span class="p">(</span>
+    <span class="n">panel</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">interact</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">html_pane2</span><span class="p">),</span>
+    <span class="n">panel</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">html_pane</span><span class="p">,</span> <span class="n">interact</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span>
+<span class="p">)</span><span class="o">.</span><span class="n">servable</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>There you have it—a quick and easy option for dashbording without breaking a sweat.  That’s not all that Panel can do, but for a simple framework for getting a UI wrapped around your functions, it’s hard to beat.</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./panel_aids/baby_names"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Quansight<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>
