@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; Panel learning aids</title>
+    <title>Working across panel and ipywidgets ecosystems &#8212; Panel learning aids</title>
     
   <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -186,7 +186,65 @@
             <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
-            <ul class="simple nav section-nav flex-column">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-are-widgets">
+   What are widgets?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#panel-and-ipywidgets-demonstration">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     panel
+    </span>
+   </code>
+   and
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ipywidgets
+    </span>
+   </code>
+   demonstration.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#widgets-with-panel-and-hvplot">
+   widgets with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     panel
+    </span>
+   </code>
+   and
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     hvplot
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ipywidgets">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ipywidgets
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linking-interactions-in-each-ecosystem">
+   Linking interactions in each ecosystem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   Conclusion
+  </a>
+ </li>
 </ul>
 
         </nav>
@@ -198,8 +256,16 @@
         
               <div>
                 
-  <p><a class="reference external" href="https://panel.holoviz.org/index.html">Panel</a> is a open source python library that makes it easy to build interactive web apps and dashboards with user defined widgets.  There are a whole set of widgets available to use in the panel library.  However, did you know that you can also use <a class="reference external" href="https://ipywidgets.readthedocs.io/en/latest/">ipywidgets</a> in panel as seamlessly as using panel widgets?</p>
-<p>This notebook will demonstrate an example of using ipywigets in a panel app.  We are going to take an modify an <a class="reference external" href="https://panel.holoviz.org/user_guide/APIs.html">example</a> from the panel website and switch out the panel ColorPicker widget with the ipywidgets ColorPicker widget.  We’ll also add a few other ipywidgets to change the size and shape of the markers just for fun.</p>
+  <div class="section" id="working-across-panel-and-ipywidgets-ecosystems">
+<h1>Working across <code class="docutils literal notranslate"><span class="pre">panel</span></code> and <code class="docutils literal notranslate"><span class="pre">ipywidgets</span></code> ecosystems<a class="headerlink" href="#working-across-panel-and-ipywidgets-ecosystems" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://panel.holoviz.org/index.html"><code class="docutils literal notranslate"><span class="pre">panel</span></code></a> is a open source python library that makes it easy to build interactive web apps and dashboards with user defined widgets.  There are a whole set of widgets available to use in the panel library.  However, did you know that you can also use <a class="reference external" href="https://ipywidgets.readthedocs.io/en/latest/"><code class="docutils literal notranslate"><span class="pre">ipywidgets</span></code></a> in panel as seamlessly as using panel widgets?</p>
+<div class="section" id="what-are-widgets">
+<h2>What are widgets?<a class="headerlink" href="#what-are-widgets" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">panel</span></code> and <code class="docutils literal notranslate"><span class="pre">ipywidgets</span></code> have two different patterns for widgets that, in the past, required authors to choose between one ecosystem or the other. The union of these ecosystems opens up enormous possibilities for graphical user interfaces to interact with in notebooks and web applications.</p>
+</div>
+<div class="section" id="panel-and-ipywidgets-demonstration">
+<h2><code class="docutils literal notranslate"><span class="pre">panel</span></code> and <code class="docutils literal notranslate"><span class="pre">ipywidgets</span></code> demonstration.<a class="headerlink" href="#panel-and-ipywidgets-demonstration" title="Permalink to this headline">¶</a></h2>
+<p>This notebook will show you an example that uses ipywigets in a <code class="docutils literal notranslate"><span class="pre">panel</span></code> app.  We are going to take and modify an <a class="reference external" href="https://panel.holoviz.org/user_guide/APIs.html">example</a> from the <code class="docutils literal notranslate"><span class="pre">panel</span></code> website and switch out the <code class="docutils literal notranslate"><span class="pre">panel.ColorPicker</span></code> widget with the <code class="docutils literal notranslate"><span class="pre">ipywidgets.ColorPicker</span></code> widget.  We’ll also add a few other <code class="docutils literal notranslate"><span class="pre">ipywidgets</span></code> to change the size and shape of the markers just for fun.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">hvplot.pandas</span><span class="o">,</span> <span class="nn">panel</span><span class="o">,</span> <span class="nn">ipywidgets</span><span class="o">,</span> <span class="nn">bokeh.sampledata.autompg</span><span class="p">;</span> <span class="n">panel</span><span class="o">.</span><span class="n">extension</span><span class="p">()</span>
@@ -215,7 +281,10 @@
 </div>
 </div>
 </div>
-<p>We can create various scatter plots using the columns in the dataframe as variables.  One example is show here.</p>
+</div>
+<div class="section" id="widgets-with-panel-and-hvplot">
+<h2>widgets with <code class="docutils literal notranslate"><span class="pre">panel</span></code> and <code class="docutils literal notranslate"><span class="pre">hvplot</span></code><a class="headerlink" href="#widgets-with-panel-and-hvplot" title="Permalink to this headline">¶</a></h2>
+<p>We can use <code class="docutils literal notranslate"><span class="pre">hvplot</span></code> to plot the <code class="docutils literal notranslate"><span class="pre">autompg</span></code>; this plot is a kind of <code class="docutils literal notranslate"><span class="pre">panel</span></code> widget that will develop a graphical user interface to interact with.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bokeh</span><span class="o">.</span><span class="n">sampledata</span><span class="o">.</span><span class="n">autompg</span><span class="o">.</span><span class="n">autompg</span><span class="o">.</span><span class="n">hvplot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;mpg&#39;</span><span class="p">,</span> <span class="s1">&#39;hp&#39;</span><span class="p">)</span>
@@ -223,17 +292,18 @@
 </div>
 </div>
 </div>
-<p>We can use the sample data above along with the hvplot.Scatter function to create a panel application that includes a few widgets to adjust the plot.</p>
-<p>First, we’ll define a few panel widgets.  Both of the widgets <code class="docutils literal notranslate"><span class="pre">independent</span></code> and <code class="docutils literal notranslate"><span class="pre">dependent</span></code> are drop down menus that will display the different columns from the autompg dataframe as options for the independent and dependent variables of our plot.</p>
+<p>First, we’ll define a few <strong>panel</strong> widgets.  Both of the widgets <code class="docutils literal notranslate"><span class="pre">range</span></code> and <code class="docutils literal notranslate"><span class="pre">domain</span></code> are drop down menus that will display the different columns from the autompg dataframe as options for the independent and dependent variables of our plot.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">independent</span> <span class="o">=</span> <span class="n">panel</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">Select</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="s1">&#39;mpg&#39;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">bokeh</span><span class="o">.</span><span class="n">sampledata</span><span class="o">.</span><span class="n">autompg</span><span class="o">.</span><span class="n">autompg</span><span class="o">.</span><span class="n">columns</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
-<span class="n">dependent</span> <span class="o">=</span> <span class="n">panel</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">Select</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="s1">&#39;hp&#39;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">bokeh</span><span class="o">.</span><span class="n">sampledata</span><span class="o">.</span><span class="n">autompg</span><span class="o">.</span><span class="n">autompg</span><span class="o">.</span><span class="n">columns</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">domain</span> <span class="o">=</span> <span class="n">panel</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">Select</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="s1">&#39;mpg&#39;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">bokeh</span><span class="o">.</span><span class="n">sampledata</span><span class="o">.</span><span class="n">autompg</span><span class="o">.</span><span class="n">autompg</span><span class="o">.</span><span class="n">columns</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="nb">range</span> <span class="o">=</span> <span class="n">panel</span><span class="o">.</span><span class="n">widgets</span><span class="o">.</span><span class="n">Select</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="s1">&#39;hp&#39;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">bokeh</span><span class="o">.</span><span class="n">sampledata</span><span class="o">.</span><span class="n">autompg</span><span class="o">.</span><span class="n">autompg</span><span class="o">.</span><span class="n">columns</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Next, we’ll define some ipywidgets.</p>
+<div class="section" id="ipywidgets">
+<h3><code class="docutils literal notranslate"><span class="pre">ipywidgets</span></code><a class="headerlink" href="#ipywidgets" title="Permalink to this headline">¶</a></h3>
+<p>Next, we’ll define some <strong>ipywidgets</strong>.</p>
 <p>The first one is an ipywidget that will be used to change the color of the markers.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -246,10 +316,10 @@
 </div>
 </div>
 </div>
-<p>Next, the <code class="docutils literal notranslate"><span class="pre">ipywidgets.Inslider</span></code> will be used to adjust the marker size.</p>
+<p>Next, the <code class="docutils literal notranslate"><span class="pre">ipywidgets.IntSlider</span></code> will be used to adjust the marker size.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">ipywidgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">size</span> <span class="o">=</span> <span class="n">ipywidgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span>
     <span class="n">value</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span>
     <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
     <span class="nb">max</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
@@ -262,11 +332,11 @@
 </div>
 </div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">ipywidgets.Drowdown</span></code> widget will have options for different marker symbols.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">ipywidgets.Dropdown</span></code> widget will have options for different marker symbols.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">ipywidgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
-    <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;^&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">],</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">marker</span> <span class="o">=</span> <span class="n">ipywidgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
+    <span class="n">options</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="s1">&#39;*d^v&gt;&lt;x&#39;</span><span class="p">),</span>
     <span class="n">value</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">,</span>
     <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Symbol:&#39;</span><span class="p">,</span>
     <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
@@ -276,12 +346,16 @@
 </div>
 </div>
 <p>We’ll then create a function called <code class="docutils literal notranslate"><span class="pre">autompg_plot</span></code> with a call to <code class="docutils literal notranslate"><span class="pre">hvplot.scatter</span></code> that includes our variables we will have in the application (our independent and dependent variables as well as the color, size and shape of the markers).</p>
-<p>The function we are creating can be wrapped in the decorator <code class="docutils literal notranslate"><span class="pre">panel.depends</span></code>, which will be tracking whether the widgets specified (independent, dependent, color, s, and m) are changed by the user.  If they are, the function will be called, and, in this case, the plot will be updated.</p>
+<p>The function we are creating can be wrapped in the decorator <code class="docutils literal notranslate"><span class="pre">panel.depends</span></code>, which will be tracking whether the widgets specified (range, domain, color, s, and m) are changed by the user.  If they are, the function will be called, and, in this case, the plot will be updated.</p>
+</div>
+</div>
+<div class="section" id="linking-interactions-in-each-ecosystem">
+<h2>Linking interactions in each ecosystem<a class="headerlink" href="#linking-interactions-in-each-ecosystem" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@panel</span><span class="o">.</span><span class="n">depends</span><span class="p">(</span><span class="n">independent</span><span class="p">,</span> <span class="n">dependent</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">autompg_plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">bokeh</span><span class="o">.</span><span class="n">sampledata</span><span class="o">.</span><span class="n">autompg</span><span class="o">.</span><span class="n">autompg</span><span class="o">.</span><span class="n">hvplot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">independent</span><span class="p">,</span> <span class="n">dependent</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">s</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="n">m</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@panel</span><span class="o">.</span><span class="n">depends</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="nb">range</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">marker</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">autompg_plot</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="nb">range</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">marker</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">bokeh</span><span class="o">.</span><span class="n">sampledata</span><span class="o">.</span><span class="n">autompg</span><span class="o">.</span><span class="n">autompg</span><span class="o">.</span><span class="n">hvplot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="nb">range</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="n">marker</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -290,13 +364,18 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">panel</span><span class="o">.</span><span class="n">Row</span><span class="p">(</span>
-    <span class="n">panel</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="s1">&#39;## MPG Explorer&#39;</span><span class="p">,</span> <span class="n">independent</span><span class="p">,</span> <span class="n">dependent</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">m</span><span class="p">),</span>
+    <span class="n">panel</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="s1">&#39;## MPG Explorer&#39;</span><span class="p">,</span> <span class="n">domain</span><span class="p">,</span> <span class="nb">range</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">marker</span><span class="p">),</span>
     <span class="n">autompg_plot</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Using these ipywidgets was as simple as using them just as you would an panel widgets!  The great thing about this is that you now have a greater number of widgets available to use within panel applications.  Also, some ipywidgets come with a few different styling options that you may desire instead of what is offered in panel.  Either way, its so nice to have this capability.</p>
+</div>
+<div class="section" id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+<p>Using these <code class="docutils literal notranslate"><span class="pre">ipywidgets</span></code> was as simple as using them just as you would any <code class="docutils literal notranslate"><span class="pre">panel</span></code> widgets!  The great thing about this is that you now have a greater number of widgets available to use within panel applications.  Also, some ipywidgets come with a few different styling options that you may desire instead of what is offered in panel.  Either way, its so nice to have this capability.</p>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
